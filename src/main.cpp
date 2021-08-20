@@ -5,13 +5,9 @@
 #include "ng_adc.h"
 #include "ng_pwm.h"
 
-#include <avr/interrupt.h>
-
 uint8_t WIDTH = 30;
 
 void toggle() {
-    attachInterrupt
-
     static uint8_t val[3] = {0, (uint8_t)(WIDTH/2U), WIDTH};
     static uint8_t dir[3] = {1, 1, 0};
     static uint8_t port[3] = {PORTB3, PORTB2, PORTB1};
