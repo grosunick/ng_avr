@@ -4,8 +4,8 @@
 
 #define EVERY_MS(x) \
   static uint32_t tmr;\
-  bool flag = millis() - tmr >= (x);\
-  if (flag) tmr = millis();\
+  bool flag = ng::millis() - tmr >= (x);\
+  if (flag) tmr = ng::millis();\
   if (flag)
 
 namespace ng
@@ -70,5 +70,4 @@ namespace ng
             return cnt++;
         }
     };
-
 }

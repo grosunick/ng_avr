@@ -1,7 +1,6 @@
 #pragma once
 
 #include <avr/io.h>
-#include "Arduino.h"
 
 const uint8_t ADC_REF_VCC = 0;
 
