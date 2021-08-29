@@ -1,0 +1,9 @@
+
+USBAsp connector
+      __ __
+VCC  | · · |   MOSI
+GND  | · · |_
+GND  | · ·  _| RESET
+GND  | · · |   SCK
+GND  | · · |   MISO
+     |_____|
