@@ -1,6 +1,8 @@
 #pragma once
 
 #include <avr/io.h>
+#include "ng_avr/ng_defs.h"
+#include "ng_avr/ng_io.h"
 
 namespace ng
 {
@@ -27,6 +29,19 @@ namespace ng
   {
       TCCR0B = _BV(CS00);  // PWM frequency = (F_CPU/256) / 1
       DDRB |= _BV(pin); // Set pin to output
+
+        if(val == 0) {
+            offPWM(pin);        // Turn off PWM
+            digitalWrite(pin, LOW); // Set pin low
+            return;
+        }
+
+        // Handle on condition
+        else if(val == 255) {
+            offPWM(pin);         // Turn off PWM
+            digitalWrite(pin, HIGH); // Set pin high
+            return;
+        }
 
       // Otherwise setup the appropriate timer compare
       if(pin == 0) {

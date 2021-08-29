@@ -16,14 +16,12 @@ namespace ng {
      */
     void pinMode(uint8_t pin, uint8_t mode)
     {
-        if(mode == OUTPUT) // Pin as output
-        DDRB |= _BV(pin);
-
-        else // Pin as input or input pullup
-        {
+        if(mode == OUTPUT) { // Pin as output
+            DDRB |= _BV(pin);
+        } else { // Pin as input or input pullup
             DDRB &= ~_BV(pin); // Set pin as input
             if(mode == INPUT_PULLUP)
-            PORTB |= _BV(pin); // Enable pullup resistors
+                PORTB |= _BV(pin); // Enable pullup resistors
         }
     }
 

@@ -1,11 +1,13 @@
+#pragma once
+
 /*
 This file contains ATtiny13/A
 specific hardware definitions.
-               __ __
-(D5/A0) PB5  1|     |8  VCC
-(D3/A3) PB3  2|     |7  PB2 (D2/A1)
-(D4/A2) PB4  3|     |6  PB1 (D1/PWM)
-        GND  4|_____|5  PB0 (D0/PWM)
+                              __ __
+(PCINT5/RESET/ADC0/dW) PB5  1|     |8  VCC
+    (PCINT3/CLKI/ADC3) PB3  2|     |7  PB2 (SCK/ADC1/T0/PCINT2)
+         (PCINT4/ADC2) PB4  3|     |6  PB1 (MISO/AIN1/OC0B/INT0/PCINT1)
+                       GND  4|_____|5  PB0 (MOSI/AIN0/OC0A/PCINT0)
 */
 
 // Boards.txt defines ATtiny13A. This ensures compatibility
